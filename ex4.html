@@ -1,0 +1,29 @@
+<!DOCTYPE html><html>
+    <head><title>Odd & Even Number</title></head>
+    <script>
+        function go(){
+            var num1=document.getElementById("first").value;
+            var num2=document.getElementById("last").value;
+            if(num1%2==0){
+alert("number one is even");
+            }else{
+            alert("number one is odd");
+            }
+            if(num2%2==0){
+                alert("number two is even");
+
+
+            }else{
+            alert("number two is odd");
+        }
+        }
+    </script>
+    <body>
+        <label>Enter first number</label>
+        <input type="text" id="first">
+        <label>Enter second number</label>
+        <input type="text" id="last">
+        <button type="button" onclick="go()">Go</button>
+        
+    </body>
+</html>
