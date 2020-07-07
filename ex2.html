@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><title>Operators</title><script>
+    function add(){
+        var num1= document.getElementById('first').value;
+        var num2=document.getElementById('last').value;
+        var result= parseInt(num1)+parseInt(num2);
+        document.getElementById('lblresult').innerHTML=result;
+    }
+    function subtract(){
+        var num1= document.getElementById('first').value;
+        var num2=document.getElementById('last').value;
+        var result= parseInt(num1)-parseInt(num2);
+        document.getElementById("lblresult").innerHTML=result;
+        
+        
+    }
+</script>
+</head>
+<body>
+    <label>First num</label><br>
+    <input type="number" id="first"><br>
+    <label>Last num</label><br>
+    <input type="number" id="last"><br>
+    <label>Choose Operator</label><br>
+    
+    <h2 id="lblresult"></h2>
+    <button onclick="add()">+</button> <button onclick="subtract()">-</button>
+
+</body>
+    </html>
