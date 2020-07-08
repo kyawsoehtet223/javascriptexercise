@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Task list</title>
+        
+    </head>
+    <body>
+        <label>Task List</label><br>
+        <input type="text" id="name">
+        <button onclick="go()">Add</button>
+        <ul id="list"></ul>
+        <script>
+            function go(){
+                alert("go");
+ 
+ var n =document.getElementById("name");
+ var list=document.getElementById("list");
+ var lis= document.createElement("li");
+ var node=document.createTextNode(n.value);
+                 lis.appendChild(node);
+ list.appendChild(lis);
+ 
+ 
+ 
+             }
+         </script>
+    </body>
+</html>
