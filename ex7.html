@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Student bar nyar</title>
+    <style>
+        form{
+            display:flex;
+            flex-wrap: wrap;
+        }
+        .div1{
+            width:20%;
+            
+
+        }
+        .div2{
+            width:30%;
+        }
+        table{
+            border: 2px solid black ;
+            background-color: #eee;
+            margin-top:10px;
+        }
+        tr{
+            border: 1px dotted black;
+
+
+        }
+</style>
+</head>
+<body>
+    <form>
+        <div class="div1">
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="text" id="phone"placeholder="Enter phone number">
+    <input type="text" id="email" placeholder="Enter email address">
+    <input type="text" id="address" placeholder="Enter address">
+    </div>
+    <div class="div2">
+    <input type="radio" name="gender" value="male" id="radio"><label>Male</label>
+    <input type="radio" name="gender" value="male" id="radio"><label>Female</label>
+    <input type="checkbox" name="c1" value="501" id="checkbox"><label>501</label>
+    <input type="checkbox" name="c1" value="502" id="checkbox"><label>502</label>
+    <input type="checkbox" name="c1" value="503" id="checkbox"><label>503</label>
+    <button type="button" onclick="go()">Add</button>
+    </div>
+    </form>
+    
+    <table id="table">
+        <thead>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Subject</th></thead>
+    </table>
+    <script>
+        function go(){
+            var name=document.getElementById("name").value;
+            var phone=document.getElementById("phone").value;
+            var email=document.getElementById("email").value;
+            var address=document.getElementById("address").value;
+            var gender=document.getElementById("radio").value;
+            var subject=document.getElementById("checkbox").value;
+            
+            var namenode=document.createTextNode(name);
+            var phonenode=document.createTextNode(phone);
+            var emailnode=document.createTextNode(email);
+            var addressnode=document.createTextNode(address);
+            var gendernode=document.createTextNode(gender);
+            var subjectnode=document.createTextNode(subject);
+            
+            var table=document.getElementById("table");
+            var trow=document.createElement("tr");
+            var tco1=document.createElement("td");
+            var tco2=document.createElement("td");
+            var tco3=document.createElement("td");
+            var tco4=document.createElement("td");
+            var tco5=document.createElement("td");
+            var tco6=document.createElement("td");
+
+            table.appendChild(trow);
+            trow.appendChild(tco1);
+            trow.appendChild(tco2);
+            trow.appendChild(tco3);
+            trow.appendChild(tco4);
+            trow.appendChild(tco5);
+            trow.appendChild(tco6);
+
+            tco1.appendChild(namenode);
+            tco2.appendChild(phonenode);
+            tco3.appendChild(emailnode);
+            tco4.appendChild(addressnode);
+            tco5.appendChild(gendernode);
+            tco6.appendChild(subjectnode);
+
+        }
+
+    </script>
+
+
+
+
+
+</body></html>
