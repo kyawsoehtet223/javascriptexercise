@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+  
+</head>
+        
+        <style>
+          
+            .box{
+                display:flex;
+                margin-left: 20px;
+                margin-top:20px;
+                height:auto;
+                width:60px;
+              
+            }
+            .one{
+                border:2px solid black;
+                margin-top:20px;
+                margin-right:20px;
+                padding:10px;
+                box-shadow: 2px 2px 4px darkblue;
+
+
+            }
+            .two{
+                border:2px solid black;
+                margin-top:20px;
+                margin-right:20px;
+                padding:10px;
+                box-shadow: 2px 2px 4px darkblue;
+            }
+            input{
+                box-shadow: 2px 2px 4px darkblue;
+            }
+        </style>
+        <script>
+            var bud;
+            function totalbud(){
+                 bud=parseInt(document.getElementById('bud').value)
+                 document.getElementById("ans1").innerHTML=bud;
+                 document.getElementById("ans3").innerHTML=bud;
+                 }
+                 function add(){
+                     alert("Pls wait");
+                     var exp=document.getElementById('exp').value;
+                     var expamt=parseInt(document.getElementById('expamt').value);
+
+                     
+                     var totalb=bud-expamt;
+                     document.getElementById('ans3').innerHTML=totalb;
+                     document.getElementById('ans2').innerHTML=expamt;
+                     var expnode=document.createTextNode(exp);
+                     var expamtnode=document.createTextNode(expamt);
+                     var table=document.getElementById("t");
+            var trow=document.createElement("tr");
+            var tco1=document.createElement("td");
+            var tco2=document.createElement("td");
+            var tco3=document.createElement("td");
+            table.appendChild(trow);
+            trow.appendChild(tco1);
+            trow.appendChild(tco2);
+            trow.appendChild(tco3);
+            tco1.appendChild(expnode);
+            tco2.appendChild(expamtnode);
+            tco3.appendChild();
+                     
+
+                 }
+                 
+            
+
+
+        </script>
+    </head>
+    <body>
+<H3>BUDGET CALCULATOR</H3>
+        <div class="box">
+            
+            <div class="one">
+                <label style="font-size:18PX">Pls enter your budget</label>
+                <br>
+                <br>
+                <input type="text" id="bud">
+                <br>
+                <br>
+                <button onclick="totalbud()">Calculate</button>
+                
+            </div>
+            <div style="text-align: center; margin: 0px; margin-left: 20px;">
+            <h4>Budget</h4>
+            <i class="fa fa-money" style="color:black; font-size: 30px;"></i><br><br>
+            <i class="fa fa-dollar" style="color:black; font-size:20px;"></i>
+            <label id="ans1"></label>
+        </div>
+        <div style="text-align: center; margin: 0px; margin-left: 20px;">
+            <h4>Expenses</h4>
+            <i class="fa fa-credit-card" style="color:black; font-size: 30px;"></i><br><br>
+            <i class="fa fa-dollar" style="color:black; font-size:20px;"></i>
+            <label id="ans2"></label>
+        </div>
+        <div style="text-align: center; margin: 0px; margin-left: 20px;">
+            <h4>Balance</h4>
+            <i class="fa fa-dollar" style="color:black; font-size: 30px;"></i><br><br>
+            <i class="fa fa-dollar" style="color:black; font-size:20px;"></i>
+            <label id="ans3"></label>
+        </div>
+        </div>
+        <div class="box">
+            <div class="two">
+                <label>Pls enter Expenses</label>
+                <input type="text" id="exp"><br><br>
+                <label> Pls enter your expenses amount</label>
+                <input type="text" id="expamt"> 
+                <button onclick="add()">Add expenses</button>
+             </div>  
+                
+            
+            <table id="t" style="margin-top: 10px; margin-left: 5px; text-align: center;">
+            <tr>
+                <th style="padding:10px;">Expenses Title</th>
+                <th style="padding:10px;">Expenses Value</th>
+                <th style="padding:10px;">&nbsp;&nbsp;</th>
+
+            </tr>
+            </table>
+        </div>
+    </body>
+</html>
