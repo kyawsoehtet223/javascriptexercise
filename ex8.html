@@ -58,6 +58,11 @@
                      var expnode=document.createTextNode(exp);
                      var expamtnode=document.createTextNode(expamt);
                      var table=document.getElementById("t");
+                      var createBtn=document.createElement("button");
+                createBtn.innerHTML="Del";
+                      createBtn.addEventListener("click",function(){
+                    title.removeChild(trow);
+                });
             var trow=document.createElement("tr");
             var tco1=document.createElement("td");
             var tco2=document.createElement("td");
