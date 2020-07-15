@@ -1,0 +1,77 @@
+mysql> select * from team where id=1;
++------+------+-------------+
+| id   | name | foundeddate |
++------+------+-------------+
+|    1 | ManU | 1878-07-10  |
++------+------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from team where id=2;
++------+-----------+-------------+
+| id   | name      | foundeddate |
++------+-----------+-------------+
+|    2 | Barcelona | 1899-07-10  |
++------+-----------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from player where salary>500000;
++------+-------+---------+------+--------+--------+--------+
+| id   | name  | jersyno | age  | salary | teamid | height |
++------+-------+---------+------+--------+--------+--------+
+|    1 | pogba |       6 |   28 | 600000 |      1 |      6 |
+|    4 | messi |      10 |   33 | 700000 |      2 |      5 |
++------+-------+---------+------+--------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select name,(select sum(salary)from player where player.teamid=team.id)as salary from team;
++-----------+---------+
+| name      | salary  |
++-----------+---------+
+| ManU      | 1000000 |
+| Barcelona | 1200000 |
++-----------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select * from player where height<5;
++------+--------+---------+------+--------+--------+--------+
+| id   | name   | jersyno | age  | salary | teamid | height |
++------+--------+---------+------+--------+--------+--------+
+|    3 | marcus |      23 |   32 | 200000 |      1 |      4 |
++------+--------+---------+------+--------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select name,(select avg(salary)from player where player.teamid=team.id)as average from team;
++-----------+-------------+
+| name      | average     |
++-----------+-------------+
+| ManU      | 333333.3333 |
+| Barcelona | 400000.0000 |
++-----------+-------------+
+2 rows in set (0.00 sec)
+
+mysql>  select Name,Salary from player where Salary in (select max(Salary) from Player);
++-------+--------+
+| Name  | Salary |
++-------+--------+
+| messi | 700000 |
++-------+--------+
+1 row in set (0.04 sec)
+
+mysql>  select Name,Salary from player where Salary in (select min(Salary) from Player);
++--------+--------+
+| Name   | Salary |
++--------+--------+
+| bruno  | 200000 |
+| marcus | 200000 |
+| griez  | 200000 |
++--------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from player where age>30 and salary>200000;
++------+--------+---------+------+--------+--------+--------+
+| id   | name   | jersyno | age  | salary | teamid | height |
++------+--------+---------+------+--------+--------+--------+
+|    4 | messi  |      10 |   33 | 700000 |      2 |      5 |
+|    5 | suarez |       9 |   32 | 300000 |      2 |      6 |
++------+--------+---------+------+--------+--------+--------+
+2 rows in set (0.00 sec)
